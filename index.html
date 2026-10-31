@@ -1,0 +1,88 @@
+Create a responsive, mobile-first web game with the following specifications:
+
+🎮 GAME CONCEPT
+A Tic-Tac-Toe style web game where players must answer a quiz question before making each move. Theme: "Magic Quest" — mystical, educational, fun, and fully customizable.
+
+🎨 DESIGN REQUIREMENTS
+- Modern glassmorphism UI with CSS custom properties (variables) for easy theming
+- Animated background: twinkling stars + subtle gradient shift
+- Smooth animations: hover lifts, pop-in glyphs, victory confetti
+- Fully responsive: mobile-first, works from 320px width, touch-friendly
+- Accessible: keyboard navigation, ARIA labels, focus rings, prefers-reduced-motion support
+- Color palette (CSS variables):
+  --bg-deep: #0f0c29;
+  --bg-mid: #302b63;
+  --accent-primary: #ff6b9d;
+  --accent-secondary: #7b68ee;
+  --accent-gold: #ffd93d;
+  --success: #00d9a5;
+  --error: #ff6b6b;
+
+⚙️ CORE FEATURES
+1. Game Board: 3x3 grid, players alternate placing X/O (or themed glyphs)
+2. Quiz Gate: Before each move, a modal quiz appears — player must answer to proceed
+3. Settings Panel (modal dialog):
+   - Toggle quiz on/off
+   - Choose glyph theme: Standard (X/O) / Magic (✨/🌙) / Knight (⚔/🛡)
+   - Game mode: 2 Players / Vs AI
+   - AI difficulty: Perfect / Pragmatic / Reckless (if vs AI)
+   - Choose who starts: Player 1 / Player 2
+4. Score Tracking: Display wins for P1, P2, and draws; persist in localStorage
+5. Feedback System: 
+   - Correct answer: green highlight + positive message + mini confetti
+   - Incorrect answer: red highlight + encouraging message + show correct answer
+   - Allow up to 3 attempts per question, then auto-proceed (mercy rule)
+6. Victory Effects: Full-screen confetti + animated banner with winner message
+
+❓ QUESTION SYSTEM — ✏️ UNIVERSAL TEMPLATE (JUST ADD YOUR QUESTIONS) ✏️
+
+Questions must be stored in a simple, editable JavaScript array. Use this EXACT structure:
+
+// 🎯🎯🎯 HOW TO SPECIFY THE CORRECT ANSWER 🎯🎯🎯
+// FORMAT: "Question with ___?,Option1,Option2,Option3,CORRECT_NUMBER"
+// 🔢 CORRECT_NUMBER: 1 = first option, 2 = second option, 3 = third option
+// Example: "Question 1 is ___?,Option A,Option B,Option C,2" → Option B is correct (option #2)
+
+// 📋 UNIVERSAL QUESTION TEMPLATES — REPLACE WITH YOUR OWN QUESTIONS!
+// Just edit the text between quotes. Keep the comma format!
+
+const rawQuizData = [
+  "Question 1 is ___?,Answer option 1,Answer option 2,Answer option 3,1",
+  "Question 2 is ___?,Answer option 1,Answer option 2,Answer option 3,2",
+  "Question 3 is ___?,Answer option 1,Answer option 2,Answer option 3,3",
+  "Question 4 is ___?,Answer option 1,Answer option 2,Answer option 3,1",
+  "Question 5 is ___?,Answer option 1,Answer option 2,Answer option 3,2",
+  "Question 6 is ___?,Answer option 1,Answer option 2,Answer option 3,3",
+  "Question 7 is ___?,Answer option 1,Answer option 2,Answer option 3,1",
+  "Question 8 is ___?,Answer option 1,Answer option 2,Answer option 3,2",
+  "Question 9 is ___?,Answer option 1,Answer option 2,Answer option 3,3",
+  "Question 10 is ___?,Answer option 1,Answer option 2,Answer option 3,1",
+];
+
+// ➕ ADD YOUR OWN QUESTIONS BELOW USING THE SAME FORMAT:
+// "Your question with ___?,Option 1,Option 2,Option 3,correct_number",
+
+🧩 TECHNICAL REQUIREMENTS
+- Single HTML file with embedded CSS and JavaScript (no external dependencies)
+- Vanilla JS only — no frameworks
+- CSS custom properties for all colors, spacing, and effects
+- localStorage for persisting scores and user settings
+- Semantic HTML with ARIA attributes for accessibility
+- Touch events + click events for cross-device compatibility
+- Clean, commented code with clear section headers
+
+🚀 DELIVERABLE
+A single, production-ready index.html file that:
+1. Loads instantly on mobile and desktop
+2. Works offline after first load
+3. Is easy to customize (questions, colors, glyphs via CSS/JS variables)
+4. Passes basic accessibility checks (keyboard nav, screen reader labels)
+5. Includes smooth animations that respect prefers-reduced-motion
+
+🎁 BONUS (Optional but Nice-to-Have)
+- Sound effects toggle with mute option
+- Shareable score results
+- Daily challenge mode with seeded random questions
+- Export/import settings via JSON
+
+✨ FINAL NOTE: The game should feel magical and rewarding — every correct answer should feel like casting a spell, every win like completing a quest. Make learning feel like play! 🪄🎮📚
